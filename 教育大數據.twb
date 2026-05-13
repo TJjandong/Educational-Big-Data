@@ -1,0 +1,2259 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20252.25.0514.2217                               -->
+<workbook original-version='18.1' source-build='2025.2.0 (20252.25.0514.2217)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <VizInTooltipHideWorksheet />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Log_Problem+' inline='true' name='federated.0pms8ov15ue89a14vgkbu0mbq653' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Log_Problem' name='textscan.0ztxgxb1g5xgm917xm9h40wqw4n4'>
+            <connection class='textscan' directory='C:/Users/jan20/Downloads/archive' filename='Log_Problem.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[Log_Problem.csv].[ucid]' />
+              <expression op='[Info_Content.csv].[ucid]' />
+            </expression>
+          </clause>
+          <relation join='inner' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[Log_Problem.csv].[uuid]' />
+                <expression op='[Info_UserData.csv].[uuid]' />
+              </expression>
+            </clause>
+            <relation connection='textscan.0ztxgxb1g5xgm917xm9h40wqw4n4' name='Log_Problem.csv' table='[Log_Problem#csv]' type='table'>
+              <columns character-set='UTF-8' header='yes' locale='zh_TW' separator=','>
+                <column datatype='string' name='timestamp_TW' ordinal='0' />
+                <column datatype='string' name='uuid' ordinal='1' />
+                <column datatype='string' name='ucid' ordinal='2' />
+                <column datatype='string' name='upid' ordinal='3' />
+                <column datatype='integer' name='problem_number' ordinal='4' />
+                <column datatype='integer' name='exercise_problem_repeat_session' ordinal='5' />
+                <column datatype='boolean' name='is_correct' ordinal='6' />
+                <column datatype='integer' name='total_sec_taken' ordinal='7' />
+                <column datatype='integer' name='total_attempt_cnt' ordinal='8' />
+                <column datatype='integer' name='used_hint_cnt' ordinal='9' />
+                <column datatype='boolean' name='is_hint_used' ordinal='10' />
+                <column datatype='boolean' name='is_downgrade' ordinal='11' />
+                <column datatype='boolean' name='is_upgrade' ordinal='12' />
+                <column datatype='integer' name='level' ordinal='13' />
+              </columns>
+            </relation>
+            <relation connection='textscan.0ztxgxb1g5xgm917xm9h40wqw4n4' name='Info_UserData.csv' table='[Info_UserData#csv]' type='table'>
+              <columns character-set='UTF-8' header='yes' locale='zh_TW' separator=','>
+                <column datatype='string' name='uuid' ordinal='0' />
+                <column datatype='string' name='gender' ordinal='1' />
+                <column datatype='integer' name='points' ordinal='2' />
+                <column datatype='integer' name='badges_cnt' ordinal='3' />
+                <column datatype='date' name='first_login_date_TW' ordinal='4' />
+                <column datatype='integer' name='user_grade' ordinal='5' />
+                <column datatype='string' name='user_city' ordinal='6' />
+                <column datatype='integer' name='has_teacher_cnt' ordinal='7' />
+                <column datatype='boolean' name='is_self_coach' ordinal='8' />
+                <column datatype='integer' name='has_student_cnt' ordinal='9' />
+                <column datatype='integer' name='belongs_to_class_cnt' ordinal='10' />
+                <column datatype='integer' name='has_class_cnt' ordinal='11' />
+              </columns>
+            </relation>
+          </relation>
+          <relation connection='textscan.0ztxgxb1g5xgm917xm9h40wqw4n4' name='Info_Content.csv' table='[Info_Content#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='zh_TW' separator=','>
+              <column datatype='string' name='ucid' ordinal='0' />
+              <column datatype='string' name='content_pretty_name' ordinal='1' />
+              <column datatype='string' name='content_kind' ordinal='2' />
+              <column datatype='string' name='difficulty' ordinal='3' />
+              <column datatype='string' name='subject' ordinal='4' />
+              <column datatype='string' name='learning_stage' ordinal='5' />
+              <column datatype='string' name='level1_id' ordinal='6' />
+              <column datatype='string' name='level2_id' ordinal='7' />
+              <column datatype='string' name='level3_id' ordinal='8' />
+              <column datatype='string' name='level4_id' ordinal='9' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[badges_cnt]' value='[Info_UserData.csv].[badges_cnt]' />
+          <map key='[belongs_to_class_cnt]' value='[Info_UserData.csv].[belongs_to_class_cnt]' />
+          <map key='[content_kind]' value='[Info_Content.csv].[content_kind]' />
+          <map key='[content_pretty_name]' value='[Info_Content.csv].[content_pretty_name]' />
+          <map key='[difficulty]' value='[Info_Content.csv].[difficulty]' />
+          <map key='[exercise_problem_repeat_session]' value='[Log_Problem.csv].[exercise_problem_repeat_session]' />
+          <map key='[first_login_date_TW]' value='[Info_UserData.csv].[first_login_date_TW]' />
+          <map key='[gender]' value='[Info_UserData.csv].[gender]' />
+          <map key='[has_class_cnt]' value='[Info_UserData.csv].[has_class_cnt]' />
+          <map key='[has_student_cnt]' value='[Info_UserData.csv].[has_student_cnt]' />
+          <map key='[has_teacher_cnt]' value='[Info_UserData.csv].[has_teacher_cnt]' />
+          <map key='[is_correct]' value='[Log_Problem.csv].[is_correct]' />
+          <map key='[is_downgrade]' value='[Log_Problem.csv].[is_downgrade]' />
+          <map key='[is_hint_used]' value='[Log_Problem.csv].[is_hint_used]' />
+          <map key='[is_self_coach]' value='[Info_UserData.csv].[is_self_coach]' />
+          <map key='[is_upgrade]' value='[Log_Problem.csv].[is_upgrade]' />
+          <map key='[learning_stage]' value='[Info_Content.csv].[learning_stage]' />
+          <map key='[level1_id]' value='[Info_Content.csv].[level1_id]' />
+          <map key='[level2_id]' value='[Info_Content.csv].[level2_id]' />
+          <map key='[level3_id]' value='[Info_Content.csv].[level3_id]' />
+          <map key='[level4_id]' value='[Info_Content.csv].[level4_id]' />
+          <map key='[level]' value='[Log_Problem.csv].[level]' />
+          <map key='[points]' value='[Info_UserData.csv].[points]' />
+          <map key='[problem_number]' value='[Log_Problem.csv].[problem_number]' />
+          <map key='[subject]' value='[Info_Content.csv].[subject]' />
+          <map key='[timestamp_TW]' value='[Log_Problem.csv].[timestamp_TW]' />
+          <map key='[total_attempt_cnt]' value='[Log_Problem.csv].[total_attempt_cnt]' />
+          <map key='[total_sec_taken]' value='[Log_Problem.csv].[total_sec_taken]' />
+          <map key='[ucid (Info_Content.csv)]' value='[Info_Content.csv].[ucid]' />
+          <map key='[ucid]' value='[Log_Problem.csv].[ucid]' />
+          <map key='[upid]' value='[Log_Problem.csv].[upid]' />
+          <map key='[used_hint_cnt]' value='[Log_Problem.csv].[used_hint_cnt]' />
+          <map key='[user_city]' value='[Info_UserData.csv].[user_city]' />
+          <map key='[user_grade]' value='[Info_UserData.csv].[user_grade]' />
+          <map key='[uuid (Info_UserData.csv)]' value='[Info_UserData.csv].[uuid]' />
+          <map key='[uuid]' value='[Log_Problem.csv].[uuid]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Log_Problem.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;zh_Hans_CN&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;zh_TW&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Info_UserData.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;zh_Hans_CN&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;zh_TW&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Info_Content.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;zh_Hans_CN&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;zh_TW&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>timestamp_TW</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[timestamp_TW]</local-name>
+            <parent-name>[Log_Problem.csv]</parent-name>
+            <remote-alias>timestamp_TW</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>uuid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[uuid]</local-name>
+            <parent-name>[Log_Problem.csv]</parent-name>
+            <remote-alias>uuid</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ucid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ucid]</local-name>
+            <parent-name>[Log_Problem.csv]</parent-name>
+            <remote-alias>ucid</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>upid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[upid]</local-name>
+            <parent-name>[Log_Problem.csv]</parent-name>
+            <remote-alias>upid</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>problem_number</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[problem_number]</local-name>
+            <parent-name>[Log_Problem.csv]</parent-name>
+            <remote-alias>problem_number</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>exercise_problem_repeat_session</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[exercise_problem_repeat_session]</local-name>
+            <parent-name>[Log_Problem.csv]</parent-name>
+            <remote-alias>exercise_problem_repeat_session</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_correct</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[is_correct]</local-name>
+            <parent-name>[Log_Problem.csv]</parent-name>
+            <remote-alias>is_correct</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_sec_taken</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_sec_taken]</local-name>
+            <parent-name>[Log_Problem.csv]</parent-name>
+            <remote-alias>total_sec_taken</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_attempt_cnt</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_attempt_cnt]</local-name>
+            <parent-name>[Log_Problem.csv]</parent-name>
+            <remote-alias>total_attempt_cnt</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>used_hint_cnt</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[used_hint_cnt]</local-name>
+            <parent-name>[Log_Problem.csv]</parent-name>
+            <remote-alias>used_hint_cnt</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_hint_used</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[is_hint_used]</local-name>
+            <parent-name>[Log_Problem.csv]</parent-name>
+            <remote-alias>is_hint_used</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_downgrade</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[is_downgrade]</local-name>
+            <parent-name>[Log_Problem.csv]</parent-name>
+            <remote-alias>is_downgrade</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_upgrade</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[is_upgrade]</local-name>
+            <parent-name>[Log_Problem.csv]</parent-name>
+            <remote-alias>is_upgrade</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>level</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[level]</local-name>
+            <parent-name>[Log_Problem.csv]</parent-name>
+            <remote-alias>level</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>uuid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[uuid (Info_UserData.csv)]</local-name>
+            <parent-name>[Info_UserData.csv]</parent-name>
+            <remote-alias>uuid</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[gender]</local-name>
+            <parent-name>[Info_UserData.csv]</parent-name>
+            <remote-alias>gender</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>points</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[points]</local-name>
+            <parent-name>[Info_UserData.csv]</parent-name>
+            <remote-alias>points</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>badges_cnt</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[badges_cnt]</local-name>
+            <parent-name>[Info_UserData.csv]</parent-name>
+            <remote-alias>badges_cnt</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>first_login_date_TW</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[first_login_date_TW]</local-name>
+            <parent-name>[Info_UserData.csv]</parent-name>
+            <remote-alias>first_login_date_TW</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>user_grade</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[user_grade]</local-name>
+            <parent-name>[Info_UserData.csv]</parent-name>
+            <remote-alias>user_grade</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>user_city</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[user_city]</local-name>
+            <parent-name>[Info_UserData.csv]</parent-name>
+            <remote-alias>user_city</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>has_teacher_cnt</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[has_teacher_cnt]</local-name>
+            <parent-name>[Info_UserData.csv]</parent-name>
+            <remote-alias>has_teacher_cnt</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_self_coach</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[is_self_coach]</local-name>
+            <parent-name>[Info_UserData.csv]</parent-name>
+            <remote-alias>is_self_coach</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>has_student_cnt</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[has_student_cnt]</local-name>
+            <parent-name>[Info_UserData.csv]</parent-name>
+            <remote-alias>has_student_cnt</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>belongs_to_class_cnt</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[belongs_to_class_cnt]</local-name>
+            <parent-name>[Info_UserData.csv]</parent-name>
+            <remote-alias>belongs_to_class_cnt</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>has_class_cnt</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[has_class_cnt]</local-name>
+            <parent-name>[Info_UserData.csv]</parent-name>
+            <remote-alias>has_class_cnt</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ucid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ucid (Info_Content.csv)]</local-name>
+            <parent-name>[Info_Content.csv]</parent-name>
+            <remote-alias>ucid</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>content_pretty_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[content_pretty_name]</local-name>
+            <parent-name>[Info_Content.csv]</parent-name>
+            <remote-alias>content_pretty_name</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>content_kind</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[content_kind]</local-name>
+            <parent-name>[Info_Content.csv]</parent-name>
+            <remote-alias>content_kind</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>difficulty</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[difficulty]</local-name>
+            <parent-name>[Info_Content.csv]</parent-name>
+            <remote-alias>difficulty</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>subject</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[subject]</local-name>
+            <parent-name>[Info_Content.csv]</parent-name>
+            <remote-alias>subject</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>learning_stage</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[learning_stage]</local-name>
+            <parent-name>[Info_Content.csv]</parent-name>
+            <remote-alias>learning_stage</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>level1_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[level1_id]</local-name>
+            <parent-name>[Info_Content.csv]</parent-name>
+            <remote-alias>level1_id</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>level2_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[level2_id]</local-name>
+            <parent-name>[Info_Content.csv]</parent-name>
+            <remote-alias>level2_id</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>level3_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[level3_id]</local-name>
+            <parent-name>[Info_Content.csv]</parent-name>
+            <remote-alias>level3_id</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>level4_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[level4_id]</local-name>
+            <parent-name>[Info_Content.csv]</parent-name>
+            <remote-alias>level4_id</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LZH_RCN' />
+            <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='使用人數' datatype='integer' name='[Calculation_695524673185513472]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT([uuid (Info_UserData.csv)])' />
+      </column>
+      <column caption='Log_Problem.csv' datatype='table' name='[__tableau_internal_object_id__].[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]' role='measure' type='quantitative' />
+      <column caption='Badges Cnt' datatype='integer' name='[badges_cnt]' role='measure' type='quantitative' />
+      <column caption='Belongs To Class Cnt' datatype='integer' name='[belongs_to_class_cnt]' role='measure' type='quantitative' />
+      <column caption='Content Kind' datatype='string' name='[content_kind]' role='dimension' type='nominal' />
+      <column caption='Content Pretty Name' datatype='string' name='[content_pretty_name]' role='dimension' type='nominal' />
+      <column caption='Difficulty' datatype='string' name='[difficulty]' role='dimension' type='nominal' />
+      <column caption='Exercise Problem Repeat Session' datatype='integer' name='[exercise_problem_repeat_session]' role='measure' type='quantitative' />
+      <column caption='first login date TW' datatype='date' name='[first_login_date_TW]' role='dimension' type='ordinal' />
+      <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+      <column caption='Has Class Cnt' datatype='integer' name='[has_class_cnt]' role='measure' type='quantitative' />
+      <column caption='Has Student Cnt' datatype='integer' name='[has_student_cnt]' role='measure' type='quantitative' />
+      <column caption='Has Teacher Cnt' datatype='integer' name='[has_teacher_cnt]' role='measure' type='quantitative' />
+      <column caption='Is Correct' datatype='boolean' name='[is_correct]' role='dimension' type='nominal' />
+      <column caption='Is Downgrade' datatype='boolean' name='[is_downgrade]' role='dimension' type='nominal' />
+      <column caption='Is Hint Used' datatype='boolean' name='[is_hint_used]' role='dimension' type='nominal' />
+      <column caption='Is Self Coach' datatype='boolean' name='[is_self_coach]' role='dimension' type='nominal' />
+      <column caption='Is Upgrade' datatype='boolean' name='[is_upgrade]' role='dimension' type='nominal' />
+      <column caption='Learning Stage' datatype='string' name='[learning_stage]' role='dimension' type='nominal' />
+      <column caption='Level1 Id' datatype='string' name='[level1_id]' role='dimension' type='nominal' />
+      <column caption='Level2 Id' datatype='string' name='[level2_id]' role='dimension' type='nominal' />
+      <column caption='Level3 Id' datatype='string' name='[level3_id]' role='dimension' type='nominal' />
+      <column caption='Level4 Id' datatype='string' name='[level4_id]' role='dimension' type='nominal' />
+      <column caption='Level' datatype='integer' name='[level]' role='measure' type='quantitative' />
+      <column caption='Points' datatype='integer' name='[points]' role='measure' type='quantitative' />
+      <column caption='Problem Number' datatype='integer' name='[problem_number]' role='dimension' type='ordinal' />
+      <column caption='Subject' datatype='string' name='[subject]' role='dimension' type='nominal' />
+      <column caption='timestamp TW' datatype='string' name='[timestamp_TW]' role='dimension' type='nominal' />
+      <column caption='Total Attempt Cnt' datatype='integer' name='[total_attempt_cnt]' role='measure' type='quantitative' />
+      <column caption='Total Sec Taken' datatype='integer' name='[total_sec_taken]' role='measure' type='quantitative' />
+      <column caption='ucid (Info Content.csv)' datatype='string' name='[ucid (Info_Content.csv)]' role='dimension' type='nominal' />
+      <column caption='Ucid' datatype='string' name='[ucid]' role='dimension' type='nominal' />
+      <column caption='Upid' datatype='string' name='[upid]' role='dimension' type='nominal' />
+      <column caption='Used Hint Cnt' datatype='integer' name='[used_hint_cnt]' role='measure' type='quantitative' />
+      <column caption='User City' datatype='string' name='[user_city]' role='dimension' semantic-role='[State].[Name]' type='nominal'>
+        <aliases>
+          <alias key='&quot;chc&quot;' value='嘉義市' />
+          <alias key='&quot;cy&quot;' value='嘉義' />
+          <alias key='&quot;hc&quot;' value='新竹市' />
+          <alias key='&quot;hlc&quot;' value='花蓮' />
+          <alias key='&quot;ilc&quot;' value='宜蘭' />
+          <alias key='&quot;kh&quot;' value='高雄市' />
+          <alias key='&quot;kl&quot;' value='基隆市' />
+          <alias key='&quot;km&quot;' value='金門' />
+          <alias key='&quot;lj&quot;' value='連江' />
+          <alias key='&quot;ml&quot;' value='苗栗' />
+          <alias key='&quot;ntct&quot;' value='南投' />
+          <alias key='&quot;ntpc&quot;' value='新北市' />
+          <alias key='&quot;phc&quot;' value='澎湖' />
+          <alias key='&quot;ptc&quot;' value='屏東' />
+          <alias key='&quot;tc&quot;' value='台中市' />
+          <alias key='&quot;tn&quot;' value='台南市' />
+          <alias key='&quot;tp&quot;' value='台北市' />
+          <alias key='&quot;ttct&quot;' value='台東' />
+          <alias key='&quot;ty&quot;' value='桃園市' />
+          <alias key='&quot;ylc&quot;' value='雲林' />
+        </aliases>
+      </column>
+      <column caption='User Grade' datatype='integer' name='[user_grade]' role='measure' type='quantitative' />
+      <column caption='uuid (Info UserData.csv)' datatype='string' name='[uuid (Info_UserData.csv)]' role='dimension' type='nominal' />
+      <column caption='Uuid' datatype='string' name='[uuid]' role='dimension' type='nominal' />
+      <column-instance column='[user_city]' derivation='None' name='[none:user_city:nk]' pivot='key' type='nominal' />
+      <group caption='工具提示(User City)' hidden='true' name='[Tooltip (User City)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[user_city]' />
+        </groupfilter>
+      </group>
+      <group caption='User City 集合' name='[User City 集合]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;chc&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;cy&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;hc&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;hlc&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;ilc&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;kh&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;kl&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;km&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;lj&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;ml&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;ntct&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;ntpc&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;phc&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;ptc&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;tc&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;tn&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;tp&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;ttct&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;ty&quot;' />
+          <groupfilter function='member' level='[none:user_city:nk]' member='&quot;ylc&quot;' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='zh_TW' class='hyper' dbname='C:/Users/jan20/AppData/Local/Temp/TableauTemp/#TableauTemp_0vk2gt21kywaqa13elwuf0cdpv67.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='11/13/2025 03:58:10 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <cols>
+            <map key='[badges_cnt]' value='[Extract].[badges_cnt]' />
+            <map key='[belongs_to_class_cnt]' value='[Extract].[belongs_to_class_cnt]' />
+            <map key='[content_kind]' value='[Extract].[content_kind]' />
+            <map key='[content_pretty_name]' value='[Extract].[content_pretty_name]' />
+            <map key='[difficulty]' value='[Extract].[difficulty]' />
+            <map key='[exercise_problem_repeat_session]' value='[Extract].[exercise_problem_repeat_session]' />
+            <map key='[first_login_date_TW]' value='[Extract].[first_login_date_TW]' />
+            <map key='[gender]' value='[Extract].[gender]' />
+            <map key='[has_class_cnt]' value='[Extract].[has_class_cnt]' />
+            <map key='[has_student_cnt]' value='[Extract].[has_student_cnt]' />
+            <map key='[has_teacher_cnt]' value='[Extract].[has_teacher_cnt]' />
+            <map key='[is_correct]' value='[Extract].[is_correct]' />
+            <map key='[is_downgrade]' value='[Extract].[is_downgrade]' />
+            <map key='[is_hint_used]' value='[Extract].[is_hint_used]' />
+            <map key='[is_self_coach]' value='[Extract].[is_self_coach]' />
+            <map key='[is_upgrade]' value='[Extract].[is_upgrade]' />
+            <map key='[learning_stage]' value='[Extract].[learning_stage]' />
+            <map key='[level1_id]' value='[Extract].[level1_id]' />
+            <map key='[level2_id]' value='[Extract].[level2_id]' />
+            <map key='[level3_id]' value='[Extract].[level3_id]' />
+            <map key='[level4_id]' value='[Extract].[level4_id]' />
+            <map key='[level]' value='[Extract].[level]' />
+            <map key='[points]' value='[Extract].[points]' />
+            <map key='[problem_number]' value='[Extract].[problem_number]' />
+            <map key='[subject]' value='[Extract].[subject]' />
+            <map key='[timestamp_TW]' value='[Extract].[timestamp_TW]' />
+            <map key='[total_attempt_cnt]' value='[Extract].[total_attempt_cnt]' />
+            <map key='[total_sec_taken]' value='[Extract].[total_sec_taken]' />
+            <map key='[ucid (Info_Content.csv)]' value='[Extract].[ucid]' />
+            <map key='[ucid]' value='[Extract].[ucid1]' />
+            <map key='[upid]' value='[Extract].[upid]' />
+            <map key='[used_hint_cnt]' value='[Extract].[used_hint_cnt]' />
+            <map key='[user_city]' value='[Extract].[user_city]' />
+            <map key='[user_grade]' value='[Extract].[user_grade]' />
+            <map key='[uuid (Info_UserData.csv)]' value='[Extract].[uuid]' />
+            <map key='[uuid]' value='[Extract].[uuid1]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>timestamp_TW</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[timestamp_TW]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>timestamp_TW</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Log_Problem.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>84125</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>uuid1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[uuid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>uuid1</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Log_Problem.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>160946</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ucid1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ucid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ucid1</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Log_Problem.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1438</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>upid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[upid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>upid</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Log_Problem.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>69913</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>problem_number</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[problem_number]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>problem_number</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Log_Problem.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>432</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>exercise_problem_repeat_session</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[exercise_problem_repeat_session]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>exercise_problem_repeat_session</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Log_Problem.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>39</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_correct</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[is_correct]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_correct</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Log_Problem.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_sec_taken</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_sec_taken]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_sec_taken</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Log_Problem.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2475</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_attempt_cnt</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_attempt_cnt]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_attempt_cnt</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Log_Problem.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>81</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>used_hint_cnt</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[used_hint_cnt]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>used_hint_cnt</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Log_Problem.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_hint_used</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[is_hint_used]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_hint_used</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Log_Problem.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_downgrade</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[is_downgrade]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_downgrade</remote-alias>
+              <ordinal>11</ordinal>
+              <family>Log_Problem.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_upgrade</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[is_upgrade]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_upgrade</remote-alias>
+              <ordinal>12</ordinal>
+              <family>Log_Problem.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>level</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[level]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>level</remote-alias>
+              <ordinal>13</ordinal>
+              <family>Log_Problem.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>uuid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[uuid (Info_UserData.csv)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>uuid</remote-alias>
+              <ordinal>14</ordinal>
+              <family>Info_UserData.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>160946</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>gender</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[gender]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>gender</remote-alias>
+              <ordinal>15</ordinal>
+              <family>Info_UserData.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>points</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[points]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>points</remote-alias>
+              <ordinal>16</ordinal>
+              <family>Info_UserData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>121714</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>badges_cnt</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[badges_cnt]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>badges_cnt</remote-alias>
+              <ordinal>17</ordinal>
+              <family>Info_UserData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>238</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>first_login_date_TW</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[first_login_date_TW]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>first_login_date_TW</remote-alias>
+              <ordinal>18</ordinal>
+              <family>Info_UserData.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>365</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>user_grade</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[user_grade]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>user_grade</remote-alias>
+              <ordinal>19</ordinal>
+              <family>Info_UserData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>user_city</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[user_city]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>user_city</remote-alias>
+              <ordinal>20</ordinal>
+              <family>Info_UserData.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>20</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>has_teacher_cnt</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[has_teacher_cnt]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>has_teacher_cnt</remote-alias>
+              <ordinal>21</ordinal>
+              <family>Info_UserData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>41</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_self_coach</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[is_self_coach]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_self_coach</remote-alias>
+              <ordinal>22</ordinal>
+              <family>Info_UserData.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>has_student_cnt</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[has_student_cnt]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>has_student_cnt</remote-alias>
+              <ordinal>23</ordinal>
+              <family>Info_UserData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>44</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>belongs_to_class_cnt</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[belongs_to_class_cnt]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>belongs_to_class_cnt</remote-alias>
+              <ordinal>24</ordinal>
+              <family>Info_UserData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>43</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>has_class_cnt</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[has_class_cnt]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>has_class_cnt</remote-alias>
+              <ordinal>25</ordinal>
+              <family>Info_UserData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ucid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ucid (Info_Content.csv)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ucid</remote-alias>
+              <ordinal>26</ordinal>
+              <family>Info_Content.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1438</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>content_pretty_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[content_pretty_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>content_pretty_name</remote-alias>
+              <ordinal>27</ordinal>
+              <family>Info_Content.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1427</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>content_kind</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[content_kind]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>content_kind</remote-alias>
+              <ordinal>28</ordinal>
+              <family>Info_Content.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>difficulty</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[difficulty]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>difficulty</remote-alias>
+              <ordinal>29</ordinal>
+              <family>Info_Content.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>subject</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[subject]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>subject</remote-alias>
+              <ordinal>30</ordinal>
+              <family>Info_Content.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>learning_stage</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[learning_stage]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>learning_stage</remote-alias>
+              <ordinal>31</ordinal>
+              <family>Info_Content.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>level1_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[level1_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>level1_id</remote-alias>
+              <ordinal>32</ordinal>
+              <family>Info_Content.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>level2_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[level2_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>level2_id</remote-alias>
+              <ordinal>33</ordinal>
+              <family>Info_Content.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>level3_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[level3_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>level3_id</remote-alias>
+              <ordinal>34</ordinal>
+              <family>Info_Content.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>41</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>level4_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[level4_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>level4_id</remote-alias>
+              <ordinal>35</ordinal>
+              <family>Info_Content.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>166</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LZH_RCN' />
+              <object-id>[Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+        <filter class='quantitative' column='[badges_cnt]' included-values='in-range'>
+          <min>1</min>
+        </filter>
+        <filter class='categorical' column='[difficulty]'>
+          <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+            <groupfilter function='member' level='[difficulty]' member='&quot;easy&quot;' />
+            <groupfilter function='member' level='[difficulty]' member='&quot;hard&quot;' />
+            <groupfilter function='member' level='[difficulty]' member='&quot;normal&quot;' />
+          </groupfilter>
+        </filter>
+        <filter class='categorical' column='[is_self_coach]'>
+          <groupfilter function='member' level='[is_self_coach]' member='false' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+        </filter>
+        <filter class='quantitative' column='[user_grade]' included-values='in-range'>
+          <min>1</min>
+          <max>9</max>
+        </filter>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-aliased-fields='true' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Taiwan&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Log_Problem.csv' id='Log_Problem.csv_60CA1C78B5A14767A47261DC026AACFF'>
+            <properties context=''>
+              <relation join='inner' type='join'>
+                <clause type='join'>
+                  <expression op='='>
+                    <expression op='[Log_Problem.csv].[ucid]' />
+                    <expression op='[Info_Content.csv].[ucid]' />
+                  </expression>
+                </clause>
+                <relation join='inner' type='join'>
+                  <clause type='join'>
+                    <expression op='='>
+                      <expression op='[Log_Problem.csv].[uuid]' />
+                      <expression op='[Info_UserData.csv].[uuid]' />
+                    </expression>
+                  </clause>
+                  <relation connection='textscan.0ztxgxb1g5xgm917xm9h40wqw4n4' name='Log_Problem.csv' table='[Log_Problem#csv]' type='table'>
+                    <columns character-set='UTF-8' header='yes' locale='zh_TW' separator=','>
+                      <column datatype='string' name='timestamp_TW' ordinal='0' />
+                      <column datatype='string' name='uuid' ordinal='1' />
+                      <column datatype='string' name='ucid' ordinal='2' />
+                      <column datatype='string' name='upid' ordinal='3' />
+                      <column datatype='integer' name='problem_number' ordinal='4' />
+                      <column datatype='integer' name='exercise_problem_repeat_session' ordinal='5' />
+                      <column datatype='boolean' name='is_correct' ordinal='6' />
+                      <column datatype='integer' name='total_sec_taken' ordinal='7' />
+                      <column datatype='integer' name='total_attempt_cnt' ordinal='8' />
+                      <column datatype='integer' name='used_hint_cnt' ordinal='9' />
+                      <column datatype='boolean' name='is_hint_used' ordinal='10' />
+                      <column datatype='boolean' name='is_downgrade' ordinal='11' />
+                      <column datatype='boolean' name='is_upgrade' ordinal='12' />
+                      <column datatype='integer' name='level' ordinal='13' />
+                    </columns>
+                  </relation>
+                  <relation connection='textscan.0ztxgxb1g5xgm917xm9h40wqw4n4' name='Info_UserData.csv' table='[Info_UserData#csv]' type='table'>
+                    <columns character-set='UTF-8' header='yes' locale='zh_TW' separator=','>
+                      <column datatype='string' name='uuid' ordinal='0' />
+                      <column datatype='string' name='gender' ordinal='1' />
+                      <column datatype='integer' name='points' ordinal='2' />
+                      <column datatype='integer' name='badges_cnt' ordinal='3' />
+                      <column datatype='date' name='first_login_date_TW' ordinal='4' />
+                      <column datatype='integer' name='user_grade' ordinal='5' />
+                      <column datatype='string' name='user_city' ordinal='6' />
+                      <column datatype='integer' name='has_teacher_cnt' ordinal='7' />
+                      <column datatype='boolean' name='is_self_coach' ordinal='8' />
+                      <column datatype='integer' name='has_student_cnt' ordinal='9' />
+                      <column datatype='integer' name='belongs_to_class_cnt' ordinal='10' />
+                      <column datatype='integer' name='has_class_cnt' ordinal='11' />
+                    </columns>
+                  </relation>
+                </relation>
+                <relation connection='textscan.0ztxgxb1g5xgm917xm9h40wqw4n4' name='Info_Content.csv' table='[Info_Content#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='zh_TW' separator=','>
+                    <column datatype='string' name='ucid' ordinal='0' />
+                    <column datatype='string' name='content_pretty_name' ordinal='1' />
+                    <column datatype='string' name='content_kind' ordinal='2' />
+                    <column datatype='string' name='difficulty' ordinal='3' />
+                    <column datatype='string' name='subject' ordinal='4' />
+                    <column datatype='string' name='learning_stage' ordinal='5' />
+                    <column datatype='string' name='level1_id' ordinal='6' />
+                    <column datatype='string' name='level2_id' ordinal='7' />
+                    <column datatype='string' name='level3_id' ordinal='8' />
+                    <column datatype='string' name='level4_id' ordinal='9' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='各縣市人數'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>&lt;各縣市國中/小學 學生帳號數&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Log_Problem+' name='federated.0pms8ov15ue89a14vgkbu0mbq653' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0pms8ov15ue89a14vgkbu0mbq653'>
+            <column caption='使用人數' datatype='integer' name='[Calculation_695524673185513472]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([uuid (Info_UserData.csv)])' />
+            </column>
+            <column-instance column='[user_city]' derivation='None' name='[none:user_city:nk]' pivot='key' type='nominal' />
+            <column caption='User City' datatype='string' name='[user_city]' role='dimension' semantic-role='[State].[Name]' type='nominal'>
+              <aliases>
+                <alias key='&quot;chc&quot;' value='嘉義市' />
+                <alias key='&quot;cy&quot;' value='嘉義' />
+                <alias key='&quot;hc&quot;' value='新竹市' />
+                <alias key='&quot;hlc&quot;' value='花蓮' />
+                <alias key='&quot;ilc&quot;' value='宜蘭' />
+                <alias key='&quot;kh&quot;' value='高雄市' />
+                <alias key='&quot;kl&quot;' value='基隆市' />
+                <alias key='&quot;km&quot;' value='金門' />
+                <alias key='&quot;lj&quot;' value='連江' />
+                <alias key='&quot;ml&quot;' value='苗栗' />
+                <alias key='&quot;ntct&quot;' value='南投' />
+                <alias key='&quot;ntpc&quot;' value='新北市' />
+                <alias key='&quot;phc&quot;' value='澎湖' />
+                <alias key='&quot;ptc&quot;' value='屏東' />
+                <alias key='&quot;tc&quot;' value='台中市' />
+                <alias key='&quot;tn&quot;' value='台南市' />
+                <alias key='&quot;tp&quot;' value='台北市' />
+                <alias key='&quot;ttct&quot;' value='台東' />
+                <alias key='&quot;ty&quot;' value='桃園市' />
+                <alias key='&quot;ylc&quot;' value='雲林' />
+              </aliases>
+            </column>
+            <column-instance column='[Calculation_695524673185513472]' derivation='User' name='[usr:Calculation_695524673185513472:qk]' pivot='key' type='quantitative' />
+            <column caption='uuid (Info UserData.csv)' datatype='string' name='[uuid (Info_UserData.csv)]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <size column='[federated.0pms8ov15ue89a14vgkbu0mbq653].[usr:Calculation_695524673185513472:qk]' />
+              <text column='[federated.0pms8ov15ue89a14vgkbu0mbq653].[none:user_city:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>User City:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0pms8ov15ue89a14vgkbu0mbq653].[none:user_city:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>使用總人數:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0pms8ov15ue89a14vgkbu0mbq653].[usr:Calculation_695524673185513472:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true'><![CDATA[<Sheet name="年級人數" maxwidth="500" maxheight="500" filter="<All Fields>">]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='size' value='1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0pms8ov15ue89a14vgkbu0mbq653].[Latitude (generated)]</rows>
+        <cols>[federated.0pms8ov15ue89a14vgkbu0mbq653].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{2E282AD4-3520-4209-9252-FBDAA5B12429}' />
+    </worksheet>
+    <worksheet name='工作表 3'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Log_Problem+' name='federated.0pms8ov15ue89a14vgkbu0mbq653' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0pms8ov15ue89a14vgkbu0mbq653'>
+            <column caption='使用人數' datatype='integer' name='[Calculation_695524673185513472]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([uuid (Info_UserData.csv)])' />
+            </column>
+            <column caption='Badges Cnt' datatype='integer' name='[badges_cnt]' role='measure' type='quantitative' />
+            <column-instance column='[badges_cnt]' derivation='None' name='[none:badges_cnt:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[points]' derivation='None' name='[none:points:qk]' pivot='key' type='quantitative' />
+            <column caption='Points' datatype='integer' name='[points]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_695524673185513472]' derivation='User' name='[usr:Calculation_695524673185513472:qk]' pivot='key' type='quantitative' />
+            <column caption='uuid (Info UserData.csv)' datatype='string' name='[uuid (Info_UserData.csv)]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0pms8ov15ue89a14vgkbu0mbq653].[none:points:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0pms8ov15ue89a14vgkbu0mbq653].[none:badges_cnt:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0pms8ov15ue89a14vgkbu0mbq653].[none:points:qk] + [federated.0pms8ov15ue89a14vgkbu0mbq653].[none:badges_cnt:qk])</rows>
+        <cols>[federated.0pms8ov15ue89a14vgkbu0mbq653].[usr:Calculation_695524673185513472:qk]</cols>
+      </table>
+      <simple-id uuid='{3B175B41-6493-493A-AB7B-E49A19B9723E}' />
+    </worksheet>
+    <worksheet name='年級人數'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>&lt;各年級人數&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Log_Problem+' name='federated.0pms8ov15ue89a14vgkbu0mbq653' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0pms8ov15ue89a14vgkbu0mbq653'>
+            <column caption='使用人數' datatype='integer' name='[Calculation_695524673185513472]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([uuid (Info_UserData.csv)])' />
+            </column>
+            <column caption='Has Teacher Cnt' datatype='integer' name='[has_teacher_cnt]' role='measure' type='quantitative' />
+            <column-instance column='[has_teacher_cnt]' derivation='None' name='[none:has_teacher_cnt:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[user_grade]' derivation='None' name='[none:user_grade:qk]' pivot='key' type='quantitative' />
+            <column caption='User City' datatype='string' name='[user_city]' role='dimension' semantic-role='[State].[Name]' type='nominal'>
+              <aliases>
+                <alias key='&quot;chc&quot;' value='嘉義市' />
+                <alias key='&quot;cy&quot;' value='嘉義' />
+                <alias key='&quot;hc&quot;' value='新竹市' />
+                <alias key='&quot;hlc&quot;' value='花蓮' />
+                <alias key='&quot;ilc&quot;' value='宜蘭' />
+                <alias key='&quot;kh&quot;' value='高雄市' />
+                <alias key='&quot;kl&quot;' value='基隆市' />
+                <alias key='&quot;km&quot;' value='金門' />
+                <alias key='&quot;lj&quot;' value='連江' />
+                <alias key='&quot;ml&quot;' value='苗栗' />
+                <alias key='&quot;ntct&quot;' value='南投' />
+                <alias key='&quot;ntpc&quot;' value='新北市' />
+                <alias key='&quot;phc&quot;' value='澎湖' />
+                <alias key='&quot;ptc&quot;' value='屏東' />
+                <alias key='&quot;tc&quot;' value='台中市' />
+                <alias key='&quot;tn&quot;' value='台南市' />
+                <alias key='&quot;tp&quot;' value='台北市' />
+                <alias key='&quot;ttct&quot;' value='台東' />
+                <alias key='&quot;ty&quot;' value='桃園市' />
+                <alias key='&quot;ylc&quot;' value='雲林' />
+              </aliases>
+            </column>
+            <column caption='User Grade' datatype='integer' name='[user_grade]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_695524673185513472]' derivation='User' name='[usr:Calculation_695524673185513472:qk]' pivot='key' type='quantitative' />
+            <column caption='uuid (Info UserData.csv)' datatype='string' name='[uuid (Info_UserData.csv)]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0pms8ov15ue89a14vgkbu0mbq653].[Tooltip (User City)]'>
+            <groupfilter function='level-members' level='[user_city]' user:ui-action-filter='[Action - 年級人數]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0pms8ov15ue89a14vgkbu0mbq653].[Tooltip (User City)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' center='1' field='[federated.0pms8ov15ue89a14vgkbu0mbq653].[none:has_teacher_cnt:qk]' max='5' palette='blue_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0pms8ov15ue89a14vgkbu0mbq653].[none:has_teacher_cnt:qk]' />
+              <text column='[federated.0pms8ov15ue89a14vgkbu0mbq653].[usr:Calculation_695524673185513472:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.9890055656433105' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0pms8ov15ue89a14vgkbu0mbq653].[usr:Calculation_695524673185513472:qk]</rows>
+        <cols>[federated.0pms8ov15ue89a14vgkbu0mbq653].[none:user_grade:qk]</cols>
+      </table>
+      <simple-id uuid='{E8DA3CDA-443C-4490-A28A-68603B58496F}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='年級人數'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='29'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='4' param='[federated.0pms8ov15ue89a14vgkbu0mbq653].[none:has_teacher_cnt:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6A20EE8D-623E-4F7F-A35C-734A0841C305}' />
+    </window>
+    <window class='worksheet' maximized='true' name='各縣市人數'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='29'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0pms8ov15ue89a14vgkbu0mbq653].[usr:Calculation_695524673185513472:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2CDFE93E-242B-4264-984D-4AD9CF1AB088}' />
+    </window>
+    <window class='worksheet' name='工作表 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='29'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <floating-toolbar-visibility value='1' />
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{2867ED18-1A0D-4BAD-A102-50E2251B60C3}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='各縣市人數' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='工作表 3' width='192'>
+      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
+      /w8U3673uvfFMwAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='年級人數' width='192'>
+      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
+      gORq/w+Yy1+tDAJjWQAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
